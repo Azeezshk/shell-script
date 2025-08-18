@@ -1,6 +1,6 @@
 #!bin/bash
 
-NUMBER1=$1
+NUMBER=$1
 
 #gt greater tha, lt- less than, ge -great than or equal to, le - less than or equal to, 
 #eq - equal to
