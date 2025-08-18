@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 MOVIES=("Coolie" "WAR 2" "Marco")
 
