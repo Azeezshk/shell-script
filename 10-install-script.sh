@@ -21,6 +21,7 @@ then
     fi
 else 
     echo "MYSQL is already Installed"
+fi
 
 # dnf install mysql -y
 # if [ $? -ne 0 ]
@@ -44,6 +45,7 @@ if [ $? -ne 0 ]
     fi
 else 
     echo "Git is already Installed"
+fi
 
 # dnf install git -y
 # if [ $? -ne 0 ]
