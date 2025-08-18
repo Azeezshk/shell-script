@@ -9,5 +9,5 @@ then
     exit 1 #other than 0 (for exit status whether last process is success or not)
 fi
 
-dnf install mysqll -y
+dnf install mysql -y
 dnf install git -y
