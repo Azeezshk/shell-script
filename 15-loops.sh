@@ -3,6 +3,7 @@
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
+$N="\e[0m"
 
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1 )
@@ -30,7 +31,7 @@ fi
 
 for package in $@
 do
-    dnf list installed $package &>>$LOG_FILE_NAME
+    dnf list installed $package -y &>>$LOG_FILE_NAME
     if [ $? -ne 0 ]
     then
     dnf install $package -y &>>$LOG_FILE_NAME
