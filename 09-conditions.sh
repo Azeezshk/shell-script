@@ -16,5 +16,5 @@ if [ $NUMBER -lt 100 ];
 then
 echo "The number is less than 100"
 else
-echo "The number given is less than or equal to 100"
+echo "The number given is greater than or equal to 100"
 fi
