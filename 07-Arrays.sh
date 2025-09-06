@@ -9,3 +9,7 @@ echo "The Second movie is: ${MOVIES[1]}"
 echo "The Third movie is: ${MOVIES[2]}"
 
 echo "All movies are: ${MOVIES[@]}"
+
+echo "All the movies are ${MOVIES[0]} , ${MOVIES[1]}, ${MOVIES[2]} "
+
+echo "${MOVIES[@]} movies are legit" 
