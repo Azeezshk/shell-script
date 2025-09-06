@@ -17,3 +17,4 @@ then
 echo "The number is less than 100"
 else
 echo "The number given is less than or equal to 100"
+fi
