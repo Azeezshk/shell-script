@@ -22,3 +22,5 @@ then
 else 
 echo "MySQL is already Installed....."
 fi
+
+echo "Hello World !"
