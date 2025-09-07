@@ -23,3 +23,19 @@ then
 else 
 echo "MySQL is already Installed....."
 fi
+
+dnf list installed nginx
+
+if [ $? -ne 0 ];
+then
+    dnf install nginx -y
+    if [$? -ne 0 ]
+    then
+    echo "Installing Nginx.....Failure"
+    exit 1
+    else
+    echo "Installing Nginx.....Success"
+    fi
+else
+echo "Nginx is already Installed...."
+fi
