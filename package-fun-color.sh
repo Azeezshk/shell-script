@@ -46,3 +46,11 @@ then
 else
     echo -e "$Y Git is Already Installed....! $N"
 fi
+
+
+
+# ANSI Color Codes:
+# \e[31m = Red (errors/fail)
+# \e[32m = Green (success)
+# \e[33m = Yellow (warnings/info)
+# \e[0m  = Reset (back to normal text)
