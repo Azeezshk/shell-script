@@ -33,7 +33,7 @@ then
     dnf install mysql -y
     VALIDATE $? " $G Installing MySQL $N"
 else
-    echo "$Y MySQL is already Installed...! $N"
+    echo -e "$Y MySQL is already Installed...! $N"
 fi
 
 
