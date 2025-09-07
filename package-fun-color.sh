@@ -55,6 +55,11 @@ fi
 # \e[33m = Yellow (warnings/info)
 # \e[0m  = Reset (back to normal text)
 
+# Root user check:
+# id -u → prints current user's UID
+# UID 0 = root user
+# If not root, script exits with error
+
 # VALIDATE function:
 # Purpose: Reuse success/failure checks for commands
 # $1 = exit status of previous command ($?)
