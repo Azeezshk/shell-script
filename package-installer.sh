@@ -23,5 +23,3 @@ then
 else 
 echo "Nginx is already Installed....."
 fi
-
-echo "Hello World !"
