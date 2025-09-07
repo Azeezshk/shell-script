@@ -8,20 +8,20 @@ echo "You must have sudo access to run the script"
 exit 1
 fi
 
-dnf list installed mysql
+dnf list installed nginx
 
 if [ $? -ne 0 ];
 then
-    dnf install mysql -y
+    dnf install nginx -y
     if [ $? -ne 0 ];
     then
-    echo "Installing MySQL....Failure"
+    echo "Installing Nginx....Failure"
     exit 1
     else
-    echo "Insatalling MYSQL.......Success"
+    echo "Insatalling Nginx.......Success"
     fi
 else 
-echo "MySQL is already Installed....."
+echo "Nginx is already Installed....."
 fi
 
 echo "Hello World !"
