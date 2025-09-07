@@ -25,7 +25,7 @@ VALIDATE(){
 }
 
 
-echo "Script executed at : $TIMESTAMP" &>> "$LOG_FILE_NAME"
+echo "Script executed at : $TIMESTAMP"                      &>> "$LOG_FILE_NAME"
 
 # Root check
 USERID=$(id -u)
