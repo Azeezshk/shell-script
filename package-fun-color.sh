@@ -54,3 +54,9 @@ fi
 # \e[32m = Green (success)
 # \e[33m = Yellow (warnings/info)
 # \e[0m  = Reset (back to normal text)
+
+# VALIDATE function:
+# Purpose: Reuse success/failure checks for commands
+# $1 = exit status of previous command ($?)
+# $2 = description of the action (e.g., "Installing MySQL")
+# Prints colored Success/Failure message and exits on failure
