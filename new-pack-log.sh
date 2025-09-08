@@ -22,7 +22,7 @@ VALIDATE(){
         fi
 }
 
-echo "Script executed at : $TIMESTAMP"
+echo "Script executed at : $TIMESTAMP"   &>> "$LOG_FILE_NAME"
 
 #Root Check
 
@@ -43,11 +43,11 @@ chmod 755 "$LOGS_FOLDER"
 
 #For installing MySQL
 
-dnf list installed mysql
+dnf list installed mysql                &>> "$LOG_FILE_NAME"
 
 if [ $? -ne 0 ]
 then
-    dnf install mysql -y
+    dnf install mysql -y                &>> "$LOG_FILE_NAME"
     VALIDATE $? "Installing MySQL"
 else
     echo " MySQL is already Installed....!"
@@ -55,11 +55,11 @@ fi
 
 # Nginx installing 
 
-dnf list installed nginx
+dnf list installed nginx                 &>> "$LOG_FILE_NAME"
 
 if [ $? -ne 0 ]
 then
-    dnf install nginx -y
+    dnf install nginx -y                 &>> "$LOG_FILE_NAME"
     VALIDATE $? "Installing Nginx"
 else
     echo " Nginx is already Installed..!"
