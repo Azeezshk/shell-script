@@ -1,6 +1,5 @@
 #!/bin/bash
-
 while read -r line
 do
-echo $line
-done < 14-loops.sh
+echo "$line"
+done < 17-while.sh
