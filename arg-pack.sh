@@ -8,9 +8,9 @@ N="\e[0m"
 
 
 LOGS_FOLDER="/var/log/shellscript-log"
-LOG_FILE="echo $0 | cut -d "." -f1"
+LOG_FILE=(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE_NAME=($LOGS_FOLDER/$LOG_FILE-$TIMESTAMP)
+LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 #VALIDATE FUNCTION FOR RESUABLE CODE
 
@@ -36,7 +36,7 @@ fi
 #creating directory for LOG_FOLDER
 
 mkdir -p "$LOGS_FOLDER"
-chmod 755 "$LOGS_FOLDER)"
+chmod 755 "$LOGS_FOLDER"
 
 
 #creating loop for installing package
@@ -46,16 +46,8 @@ do
     dnf list installed $package -y &>> $LOG_FILE_NAME
     if [ $? -ne 0 ]
     then
-    dnf install $package -y         %>> $LOG_FILE_NAME
+    dnf install $package -y         &>> $LOG_FILE_NAME
     VALIDATE $? "Installing $package"
 else
     echo "$package is Already Installed....!"
 fi
-
-        
-
-
-
-
-
-
