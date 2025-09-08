@@ -46,9 +46,37 @@ do
     dnf list installed $package -y &>> $LOG_FILE_NAME
     if [ $? -ne 0 ]
     then
-    dnf install $package -y         &>> $LOG_FILE_NAME
-    VALIDATE $? "Installing $package"
-else
+        dnf install $package -y         &>> $LOG_FILE_NAME
+        VALIDATE $? "Installing $package"
+    else
     echo "$package is Already Installed....!"
-fi
+    fi
 done
+
+
+# Loop through all the packages passed as arguments ($@)
+# Example: if script is run as ./script.sh mysql nginx git
+# → First loop: package=mysql
+# → Second loop: package=nginx
+# → Third loop: package=git
+
+# Check if the package is already installed
+# 'dnf list installed <package>' returns:
+# → 0 (success) if package is installed
+# → non-zero (failure) if package is not installed
+# Output is sent into the logfile instead of screen
+
+# $? stores the exit status of the last command
+# If value is not equal to 0, it means package is NOT installed
+
+# Install the package using 'dnf install -y'
+# -y automatically accepts prompts
+# All install details are written into the logfile
+
+# Call the VALIDATE function
+# It takes:
+# → $1 = exit status of previous command (success/failure)
+# → $2 = custom message like "Installing mysql"
+# Prints Success or Failure accordingly
+
+# If package is already installed, print a user-friendly message
