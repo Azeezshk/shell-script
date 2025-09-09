@@ -22,7 +22,7 @@ USAGE(){
     exit 1
 }
 
-mkdir -p /home/ec2-user/shellscript-log
+mkdir -p /home/ec2-user/shellscript-logs
 
 if [ $# -lt 2]
 then
@@ -57,7 +57,7 @@ then
         echo "Successfuly created zip file for more than $DAYS"
         while read -r filepath # here filepath is the variable name....
         do
-            echo "FILES TO BE DELETED : $filepath"
+            echo "FILES TO BE DELETED : $filepath"   &>>$LOG_FILE_NAME
             rm -rf $filepath
             echo "FILES DELETED : $filepath"
         done <<< $FILES
