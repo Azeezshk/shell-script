@@ -11,9 +11,9 @@ DEST_DIR=$2
 DAYS=${3:-14} #if days not given - 14 days will be default
 
 LOGS_FOLDER="/home/ec2-user/shellscript-logs"
-LOG_FILE=$(echo $0 | awk -F "/" '{PRINT$NF}' | cut -d "." -f1)
+LOG_FILE=$(echo $0 | awk -F "/" '{print$NF}' | cut -d "." -f1)
 TIMESTAMP=$(date +%y-%m-%d-%H-%M-%S)
-LOG_FILE_NAME=$LOG_FOLDER/$LOG_FILE-$TIMESTAMP
+LOG_FILE_NAME=$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP
 
 
 USAGE(){
@@ -50,8 +50,8 @@ FILES=$(find $SOURC_DIR -name "*.log" -mtime +$DAYS )
 if [ -n "$FILES" ] #true if files are to zip
 then
     echo "FILES are : $FILES"
-    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.log"
-    find $SOURC_DIR -name "*.log" -mtime +$DAYS | zip @ "$FILES"
+    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+    find $SOURC_DIR -name "*.log" -mtime +$DAYS | zip @ "$ZIP_FILE"
     if [ -f "$ZIP_FILE" ]
     then
         echo "Successfuly created zip file for more than $DAYS"
