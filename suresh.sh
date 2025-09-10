@@ -2,6 +2,6 @@
 
 MSG="suresh"
 
-A=100
+A="100"
 
 echo "Hi from Suresh"
