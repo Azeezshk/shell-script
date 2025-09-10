@@ -7,4 +7,4 @@ echo "Hello $GREET"
 
 sh suresh.sh
 
-echo "$A"
+echo "Value of A is : $A"
