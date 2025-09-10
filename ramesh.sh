@@ -2,7 +2,7 @@
 
 MSG="RAMESH"
 GREET="HELLO FROM RAMESH"
-sources ./suresh.sh
+source ./suresh.sh
 echo "Hello $GREET"
 
 #sh suresh.sh
