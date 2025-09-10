@@ -4,3 +4,5 @@ MSG="RAMESH"
 GREET="HELLO FROM RAMESH"
 
 echo "Hello $GREET"
+
+sh suresh.sh
