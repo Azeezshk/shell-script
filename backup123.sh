@@ -58,7 +58,7 @@ then
         echo "SUCCESSFULLY CREATED ZIP FILES FOR OLDER THAN $DAYS"
         while read -r filepath
         do
-            echo "FILES TO BE DELETED : $filepath"
+            echo "FILES TO BE DELETED : $filepath"   &>>$LOG_FILE_NAME
             rm -rf $filepath
             echo "Files deleted are : $filepath"
         done <<< $FILES
