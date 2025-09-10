@@ -16,4 +16,4 @@ done <<< $DISK_USAGE
 
 echo -e "Message :$MSG"
 
-echo $MSG | mutt -s "High Disk Usage " shaikabdulazeez176@gmail.com
+echo "$MSG" | mutt -s "High Disk Usage " shaikabdulazeez176@gmail.com
